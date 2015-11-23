@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Without Copyright" pattern="file:atlassian-ide-plugin.xml" />
+</component>

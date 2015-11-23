@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright 2015 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.loxal</groupId>
+        <artifactId>meta</artifactId>
+        <version>1.2.19</version>
+    </parent>
+
+    <groupId>net.loxal.research</groupId>
+    <artifactId>exercise</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Challenge</name>
+    <packaging>jar</packaging>
+    <description>ThoughtWorks Challenge</description>
+
+    <properties>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <finalName>${project.name}-v${project.version}</finalName>
+                    <archive>
+                        <manifest>
+                            <packageName>${project.artifactId}</packageName>
+                            <addClasspath>false</addClasspath>
+                            <mainClass>net.loxal.research.exercise.ConferenceScheduleGeneration</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArguments>
+                        <profile>compact1</profile>
+                    </compilerArguments>
+                    <compilerArguments>
+                    </compilerArguments>
+                    <compilerArgument>-Xlint:unchecked</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+            </properties>
+        </profile>
+    </profiles>
+
+    <scm>
+        <connection>scm:git:git://github.com:loxal/UNSET.git</connection>
+        <developerConnection>scm:git:git@github.com:loxal/UNSET.git</developerConnection>
+        <url>https://github.com/loxal/UNSET</url>
+        <tag>HEAD</tag>
+    </scm>
+    <inceptionYear>2015</inceptionYear>
+    <url>http://www.loxal.net</url>
+</project>
