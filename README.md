@@ -1,6 +1,12 @@
 # ThoughtWorks Challenge 
 
-See https://github.com/loxal/rest-client to get a general idea of my software architecture & code style.
+See 
+
+* https://github.com/loxal
+* https://github.com/loxal/rest-client 
+* https://github.com/loxal/appdirect-integrated-microservice
+
+…to get a general idea of my software architecture & code style.
 
 ## Problem
 
