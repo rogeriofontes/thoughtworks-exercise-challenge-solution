@@ -8,4 +8,4 @@ Implementation-Vendor-Id: loxal
 Class-Path: net.loxal/
 Specification-Vendor: loxal
 Specification-Version: 1.x
-Main-Class: net.loxal.research.exercise.ConferenceScheduleGeneration
+Main-Class: net.loxal.research.exercise.ConferenceScheduleGenerator

@@ -66,7 +66,7 @@
                         <manifest>
                             <packageName>${project.artifactId}</packageName>
                             <addClasspath>false</addClasspath>
-                            <mainClass>net.loxal.research.exercise.ConferenceScheduleGeneration</mainClass>
+                            <mainClass>net.loxal.research.exercise.ConferenceScheduleGenerator</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
