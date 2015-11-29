@@ -6,12 +6,14 @@ package net.loxal.research.exercise
 
 import org.junit.Before
 import org.junit.Test
-import java.io.File
 import java.io.FileReader
 import java.nio.file.Files
 import java.nio.file.Paths
 import kotlin.test.assertEquals
 
+/**
+ * IGNORE, this implementation has been rewritten in Java.
+ */
 class ConferenceScheduleGenerationTest {
 
     // HINT: Writing functional code facilitates writing white box tests.
@@ -19,8 +21,9 @@ class ConferenceScheduleGenerationTest {
     @Before
     fun generateNewScheduleFromScratch(){
         if(Files.deleteIfExists(Paths.get(ConferenceScheduleGeneration.conferenceSchedule))){
-            ConferenceScheduleGeneration.main(conferenceEventDataInputPath)
+            println("${ConferenceScheduleGeneration.conferenceSchedule} deleted")
         }
+        ConferenceScheduleGeneration.main(conferenceEventDataInputPath)
     }
 
     @Test

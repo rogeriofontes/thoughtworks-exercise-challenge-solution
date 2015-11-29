@@ -10,6 +10,9 @@ import java.text.SimpleDateFormat
 import java.util.*
 import java.util.regex.Pattern
 
+/**
+ * IGNORE, this implementation has been rewritten in Java.
+ */
 class ConferenceScheduleGeneration(val conferenceEventData: String) {
     private val trackContent = StringBuilder()
     private var trackNumber = 1
