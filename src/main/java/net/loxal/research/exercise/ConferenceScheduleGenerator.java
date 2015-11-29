@@ -134,10 +134,11 @@ public class ConferenceScheduleGenerator {
 
     private String minToMinWithinHour(final int min) {
         final Integer minOfHour = min - (min / 60) * 60;
-        if (minOfHour.equals(5))
+        if (minOfHour.equals(5)) {
             return "05";
-        else
+        } else {
             return minOfHour.toString();
+        }
     }
 
     // time transformation from minutes to the eventually shown time could be tested end-to-end
@@ -154,9 +155,7 @@ public class ConferenceScheduleGenerator {
     }
 
     private void saveConferenceSchedule() {
-        final FileWriter generatedSchedule;
-        try {
-            generatedSchedule = new FileWriter(conferenceSchedule);
+        try (final FileWriter generatedSchedule = new FileWriter(conferenceSchedule)) {
             generatedSchedule.write(trackContent.toString());
             generatedSchedule.flush();
             generatedSchedule.close();
@@ -165,10 +164,10 @@ public class ConferenceScheduleGenerator {
         }
     }
 
-    private Map<Integer, List<String>> mapDurationToEvent(final List<String> events) {
+    private Map<Integer, List<String>> mapDurationToEvent(final List<String> eventLines) {
         final HashMap<Integer, List<String>> eventDurationToNameMap = new HashMap<>();
-        events.forEach(event -> {
-            final Matcher eventMatcher = EVENT_PATTERN.matcher(event);
+        eventLines.forEach(eventLine -> {
+            final Matcher eventMatcher = EVENT_PATTERN.matcher(eventLine);
 
             if (eventMatcher.find()) {
                 final String durationGroupMatcher = eventMatcher.group(DURATION_GROUP);
@@ -181,10 +180,10 @@ public class ConferenceScheduleGenerator {
                 }
 
                 if (eventDurationToNameMap.get(duration) == null) {
-                    eventDurationToNameMap.put(duration, Collections.singletonList(event));
+                    eventDurationToNameMap.put(duration, Collections.singletonList(eventLine));
                 } else {
                     final List<String> concatenatedEventList = new ArrayList<>(eventDurationToNameMap.get(duration));
-                    concatenatedEventList.add(event);
+                    concatenatedEventList.add(eventLine);
                     eventDurationToNameMap.put(duration, concatenatedEventList);
                 }
             }
