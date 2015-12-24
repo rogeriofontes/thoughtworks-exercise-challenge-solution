@@ -20,6 +20,7 @@ public class ConferenceScheduleGenerator {
     private static final String NEW_LINE = "\n";
     private static final int LUNCH_DURATION_IN_MIN = 60;
     private static final int LUNCH_TIME = 720;
+    private static final int EXTENDED_LUNCH_TIME = 750;
     private static final String LUNCH_EVENT = "Lunch";
     private static final int NETWORKING_EVENT_TIME = 960;
     private static final String NETWORKING_EVENT = "Networking Event";
@@ -34,7 +35,7 @@ public class ConferenceScheduleGenerator {
 
     private int trackNumber = 1;
 
-    private ConferenceScheduleGenerator(final List<String> conferenceEventLines) {
+    ConferenceScheduleGenerator(final List<String> conferenceEventLines) {
         this.conferenceEventLines = conferenceEventLines;
         process();
     }
@@ -113,7 +114,14 @@ public class ConferenceScheduleGenerator {
         return trackStartTimeInMin >= NETWORKING_EVENT_TIME;
     }
 
-    private boolean isLunchTime(final boolean lunchOccurred, final int trackStartTimeInMin) {
+    protected boolean isLunchTime(final boolean lunchOccurred, final int trackStartTimeInMin) {
+//        int extendedTimeWindowForEvent = EXTENDED_LUNCH_TIME - trackStartTimeInMin;
+//        for (Map.Entry<Integer, List<String>> entry : durationEventMap.entrySet()) {
+//            if(entry.getValue() != null && entry.getValue().isEmpty()){
+//                return
+//            }
+//        }
+        // TODO add some additional logic
         return trackStartTimeInMin >= LUNCH_TIME && !lunchOccurred;
     }
 

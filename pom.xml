@@ -9,13 +9,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>net.loxal</groupId>
-        <artifactId>meta</artifactId>
-        <version>1.2.19</version>
+        <artifactId>blueprint</artifactId>
+        <version>1.0.0</version>
     </parent>
 
     <groupId>net.loxal.research</groupId>
     <artifactId>exercise</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>Challenge</name>
     <packaging>jar</packaging>
     <description>ThoughtWorks Challenge</description>
@@ -27,6 +27,10 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
