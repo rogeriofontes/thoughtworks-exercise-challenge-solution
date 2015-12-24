@@ -81,7 +81,7 @@ Track 2:
 
 ## Solution
 
-After review: **Add more unit tests to proof TDD & adaption flexibility!**
+After review: **Add more unit tests to prove TDD & adaption flexibility!**
 
 ### General Approach
 
