@@ -30,7 +30,7 @@ Note that depending on how you choose to complete this problem,
 your solution may give a different ordering or combination of talks into tracks. 
 This is acceptable; you don’t need to exactly duplicate the sample output given here.
 
-Test input:
+Test input:                                                         
 Writing Fast Tests Against Enterprise Rails 60min
 Overdoing it in Python 45min
 Lua for the Masses 30min
@@ -80,6 +80,8 @@ Track 2:
 05:00PM Networking Event
 
 ## Solution
+
+After review: **Add more unit tests to proof TDD & adaption flexibility!**
 
 ### General Approach
 
